@@ -33,7 +33,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "outputPath": "dist/browser/fishstore-fe-v21"
+            "outputPath": "dist/fishstore-fe-v21"
           },
           "configurations": {
             "production": {
