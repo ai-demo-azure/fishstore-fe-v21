@@ -1,0 +1,6 @@
+.fish-thumb {
+  width: 400px;
+  height: 250px; /* Nên set chiều cao để layout không bị nhảy */
+  object-fit: cover; /* Giúp ảnh không bị méo khi ép kích thước */
+  display: block;
+}

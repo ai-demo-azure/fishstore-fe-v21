@@ -1,0 +1,20 @@
+@if (fish) {
+  <div class="fish-detail">
+    <img [src]="fish.imageUrl" alt="{{ fish.name }}" />
+    <h2>
+      {{ fish.name }} <small>({{ fish.scientificName }})</small>
+    </h2>
+    <p>{{ fish.description }}</p>
+    <p><strong>Price:</strong> ${{ fish.price }}</p>
+    <p><strong>Availability:</strong> {{ fish.inventoryStatus }}</p>
+
+    <h3>Care Guide</h3>
+    <ul>
+      <li><strong>Tank Size:</strong> {{ fish.careGuide.tankSize }}</li>
+      <li><strong>Water Type:</strong> {{ fish.careGuide.waterType }}</li>
+      <li><strong>Diet:</strong> {{ fish.careGuide.diet }}</li>
+      <li><strong>Compatibility:</strong> {{ fish.careGuide.compatibility }}</li>
+      <li><strong>Care Tips:</strong> {{ fish.careGuide.careTips }}</li>
+    </ul>
+  </div>
+}

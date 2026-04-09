@@ -1,0 +1,32 @@
+<div class="catalog">
+  <div class="filter-bar">
+    @for (cate of ls_category(); track cate.categoryId) {
+      <button (click)="filterByCategory(cate.categoryId)">{{ cate.categoryName }}</button>
+    } @empty {
+      <p>Loading categories...</p>
+    }
+  </div>
+
+  <input
+    type="text"
+    [ngModel]="searchTerm()"
+    (ngModelChange)="onSearchTermChange($event)"
+    placeholder="Search fish..."
+  />
+
+  <div class="grid">
+    @for (fish of filteredFish(); track fish.fishId) {
+      <div class="card">
+        <img [src]="fish.imageUrl" alt="{{ fish.name }}" class="fish-thumb" />
+        <h3>{{ fish.name }}</h3>
+        <p>
+          <i>{{ fish.scientificName }}</i>
+        </p>
+        <p>{{ fish.description }}</p>
+        <!-- <button [routerLink]="['/fish', fish.fishId]">View Details</button> -->
+      </div>
+    } @empty {
+      <p>No fish found.</p>
+    }
+  </div>
+</div>

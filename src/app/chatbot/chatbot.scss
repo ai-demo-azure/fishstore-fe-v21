@@ -1,0 +1,18 @@
+.chat-bubble {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 8px;
+  max-width: 85%;
+  text-align: left; // Nội dung bên trong luôn canh lề trái
+
+  // Loại bỏ margin thừa của các thẻ p do markdown sinh ra
+  ::ng-deep {
+    p {
+      margin: 0;
+      white-space: pre-wrap; // Giữ nguyên xuống dòng
+    }
+    ul, ol {
+      margin: 5px 0 5px 20px;
+    }
+  }
+}

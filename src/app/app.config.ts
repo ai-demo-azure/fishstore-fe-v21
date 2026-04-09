@@ -2,10 +2,22 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+import { MARKED_OPTIONS, provideMarkdown } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
-  ]
+    provideRouter(routes),
+    provideHttpClient(),
+    provideMarkdown({
+      markedOptions: {
+        provide: MARKED_OPTIONS,
+        useValue: {
+          breaks: true,
+          gfm: true,
+        },
+      },
+    }),
+  ],
 };
