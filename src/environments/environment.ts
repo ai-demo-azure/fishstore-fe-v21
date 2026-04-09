@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://yourdomain.com/api', // production backend
+  apiUrl: 'fishstore-web-api.azurewebsites.net', // production backend
 };
